@@ -1,7 +1,5 @@
 <div>
-{{#each this.flashMessages.queue as |flash|}}
-  <FlashMessage @flash={{flash}} />
-{{/each}}
+  Number of items: {{@model.items.length}}
 </div>
 {{#each @model.items as |item|}}
   <div data-test-item>
