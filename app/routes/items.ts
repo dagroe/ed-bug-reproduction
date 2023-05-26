@@ -14,15 +14,6 @@ export default class ItemsRoute extends Route {
   declare store: Store;
 
   async model(): Promise<ItemsRouteModel> {
-    const items = await this.store.findAll('item');
-    if (items.length === 0) {
-      this.store.createRecord('item', {
-        name: 'test1'
-      });
-      this.store.createRecord('item', {
-        name: 'test2'
-      });
-    }
     return RSVP.hash({
       items: this.store.findAll('item')
     });

@@ -1,3 +1,10 @@
+<div>
+{{#each this.flashMessages.queue as |flash|}}
+  <FlashMessage @flash={{flash}} />
+{{/each}}
+</div>
 {{#each @model.items as |item|}}
-  <div>{{item.name}}</div>
+  <div data-test-item>
+    {{item.name}} <button type="button" {{on "click" (fn this.deleteItem item)}} data-test-delete-button>delete</button>
+  </div>
 {{/each}}
