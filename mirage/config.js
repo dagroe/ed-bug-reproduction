@@ -13,4 +13,5 @@ export default function (config) {
 
 function routes() {
   this.resource('item');
+  this.resource('list');
 }

@@ -1,0 +1,8 @@
+<div>
+  Number of lists: {{@model.lists.length}}
+</div>
+{{#each @model.lists as |list|}}
+  <div data-test-list>
+    {{list.name}} <button type="button" {{on "click" (fn this.updateList list)}} data-test-update-button>update</button>
+  </div>
+{{/each}}

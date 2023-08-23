@@ -1,15 +1,16 @@
 import Model, { attr, hasMany } from '@ember-data/model';
+import ItemModel from 'ember-data-bug/models/item';
 
-export default class ItemModel extends Model {
+export default class ListModel extends Model {
   @attr('string')
   declare name: string;
 
-  @hasMany('list', { async: false, inverse: 'items' })
-  declare lists: ItemModel[];
+  @hasMany('item', { async: false, inverse: 'lists' })
+  declare items: ItemModel[];
 }
 
 declare module 'ember-data/types/registries/model' {
   export default interface ModelRegistry {
-    item: ItemModel;
+    list: ListModel;
   }
 }

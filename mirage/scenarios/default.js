@@ -4,5 +4,6 @@ export default function (server) {
     This data will not be loaded in your tests.
   */
 
-  server.createList('item', 2);
+  const items = server.createList('item', 2);
+  server.create('list', {name: 'list #1', items: items});
 }
